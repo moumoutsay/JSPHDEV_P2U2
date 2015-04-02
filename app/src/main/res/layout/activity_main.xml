@@ -1,0 +1,383 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Purchase price:"
+        android:id="@+id/textPurchasePrice"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textFirstPaymentDate"
+        android:layout_alignEnd="@+id/textFirstPaymentDate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Down payment:"
+        android:id="@+id/textDownPayment"
+        android:layout_below="@+id/textPurchasePrice"
+        android:layout_alignRight="@+id/textPurchasePrice"
+        android:layout_alignEnd="@+id/textPurchasePrice"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Mortgage term:"
+        android:id="@+id/textMortgateTerm"
+        android:layout_below="@+id/textDownPayment"
+        android:layout_alignRight="@+id/textPropertyTax"
+        android:layout_alignEnd="@+id/textPropertyTax"
+        android:layout_marginTop="31dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Interest rate:"
+        android:id="@+id/textInterestRate"
+        android:layout_below="@+id/textMortgateTerm"
+        android:layout_alignRight="@+id/textPropertyTax"
+        android:layout_alignEnd="@+id/textPropertyTax"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Property tax:"
+        android:id="@+id/textPropertyTax"
+        android:layout_below="@+id/textInterestRate"
+        android:layout_alignRight="@+id/textPropertyInsurance"
+        android:layout_alignEnd="@+id/textPropertyInsurance"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Property insurance:"
+        android:id="@+id/textPropertyInsurance"
+        android:layout_below="@+id/textPropertyTax"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="PMI:"
+        android:id="@+id/textPMI"
+        android:layout_below="@+id/textPropertyInsurance"
+        android:layout_alignRight="@+id/textPropertyInsurance"
+        android:layout_alignEnd="@+id/textPropertyInsurance"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ZIP Code:"
+        android:id="@+id/textZipCode"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textPMI"
+        android:layout_alignRight="@+id/textPMI"
+        android:layout_alignEnd="@+id/textPMI" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="First payment date:"
+        android:id="@+id/textFirstPaymentDate"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/textZipCode"
+        android:layout_alignRight="@+id/textZipCode"
+        android:layout_alignEnd="@+id/textZipCode" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editPurchasePrice"
+        android:layout_alignBaseline="@+id/textPurchasePrice"
+        android:layout_alignBottom="@+id/textPurchasePrice"
+        android:layout_alignLeft="@+id/buttonCalculate"
+        android:layout_alignStart="@+id/buttonCalculate"
+        android:text="300000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editDownPayment"
+        android:layout_alignBaseline="@+id/textDownPayment"
+        android:layout_alignBottom="@+id/textDownPayment"
+        android:layout_alignLeft="@+id/editPurchasePrice"
+        android:layout_alignStart="@+id/editPurchasePrice"
+        android:text="20" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editMortgateTerm"
+        android:layout_alignBaseline="@+id/textMortgateTerm"
+        android:layout_alignBottom="@+id/textMortgateTerm"
+        android:layout_alignLeft="@+id/editDownPayment"
+        android:layout_alignStart="@+id/editDownPayment"
+        android:text="30" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editInterestRate"
+        android:layout_alignBaseline="@+id/textInterestRate"
+        android:layout_alignBottom="@+id/textInterestRate"
+        android:layout_alignLeft="@+id/editMortgateTerm"
+        android:layout_alignStart="@+id/editMortgateTerm"
+        android:text="4.5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editPropertyTax"
+        android:layout_alignBaseline="@+id/textPropertyTax"
+        android:layout_alignBottom="@+id/textPropertyTax"
+        android:layout_alignLeft="@+id/editInterestRate"
+        android:layout_alignStart="@+id/editInterestRate"
+        android:text="3000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editPropertyInsurance"
+        android:layout_alignBaseline="@+id/textPropertyInsurance"
+        android:layout_alignBottom="@+id/textPropertyInsurance"
+        android:layout_alignLeft="@+id/editPropertyTax"
+        android:layout_alignStart="@+id/editPropertyTax"
+        android:text="1500" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editPMI"
+        android:layout_alignBaseline="@+id/textPMI"
+        android:layout_alignBottom="@+id/textPMI"
+        android:layout_alignLeft="@+id/editPropertyInsurance"
+        android:layout_alignStart="@+id/editPropertyInsurance"
+        android:text="0"
+        android:textColor="@android:color/darker_gray" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editZipCode"
+        android:layout_alignBaseline="@+id/textZipCode"
+        android:layout_alignBottom="@+id/textZipCode"
+        android:layout_alignLeft="@+id/editPMI"
+        android:layout_alignStart="@+id/editPMI"
+        android:text="94043" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/buttonCalculate"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/textFirstPaymentDate"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Monthly Payment"
+        android:id="@+id/textMontylyPayment"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/buttonCalculate"
+        android:layout_alignLeft="@+id/textMortgateTerm"
+        android:layout_alignStart="@+id/textMortgateTerm" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Total Payment"
+        android:id="@+id/textTotalPayment"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/textMontylyPayment"
+        android:layout_alignRight="@+id/textMontylyPayment"
+        android:layout_alignEnd="@+id/textMontylyPayment" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Payoff Date"
+        android:id="@+id/textPayoffDate"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/textTotalPayment"
+        android:layout_alignRight="@+id/textMontylyPayment"
+        android:layout_alignEnd="@+id/textMontylyPayment" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editPayoffDate"
+        android:layout_alignBaseline="@+id/textPayoffDate"
+        android:layout_alignBottom="@+id/textPayoffDate"
+        android:layout_alignLeft="@+id/editTotalPayment"
+        android:layout_alignStart="@+id/editTotalPayment"
+        android:layout_alignRight="@+id/textPropertyInsuranceTailingMoneyPerYear"
+        android:layout_alignEnd="@+id/textPropertyInsuranceTailingMoneyPerYear" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editMonthlyPayment"
+        android:layout_alignBaseline="@+id/textMontylyPayment"
+        android:layout_alignBottom="@+id/textMontylyPayment"
+        android:layout_alignLeft="@+id/buttonCalculate"
+        android:layout_alignStart="@+id/buttonCalculate"
+        android:layout_alignRight="@+id/textPropertyInsuranceTailingMoneyPerYear"
+        android:layout_alignEnd="@+id/textPropertyInsuranceTailingMoneyPerYear" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editTotalPayment"
+        android:layout_alignBaseline="@+id/textTotalPayment"
+        android:layout_alignBottom="@+id/textTotalPayment"
+        android:layout_alignLeft="@+id/editMonthlyPayment"
+        android:layout_alignStart="@+id/editMonthlyPayment"
+        android:layout_alignRight="@+id/editMonthlyPayment"
+        android:layout_alignEnd="@+id/editMonthlyPayment" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="$"
+        android:id="@+id/textPurchasePriceTailing$"
+        android:layout_alignTop="@+id/textPurchasePrice"
+        android:layout_toRightOf="@+id/editPurchasePrice"
+        android:layout_toEndOf="@+id/editPurchasePrice" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textDownPaymentTailingPercent"
+        android:layout_alignTop="@+id/textDownPayment"
+        android:layout_toRightOf="@+id/editDownPayment"
+        android:layout_toEndOf="@+id/editDownPayment"
+        android:ellipsize="middle"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="years"
+        android:id="@+id/textMortgateTermTailingYears"
+        android:layout_alignTop="@+id/textMortgateTerm"
+        android:layout_toRightOf="@+id/editMortgateTerm"
+        android:layout_toEndOf="@+id/editMortgateTerm" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textInterestRateTailingPercent"
+        android:layout_alignTop="@+id/textInterestRate"
+        android:layout_toRightOf="@+id/editInterestRate"
+        android:layout_toEndOf="@+id/editInterestRate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="$ per year"
+        android:id="@+id/textPropertyTaxTailingMoneyPerYear"
+        android:layout_alignTop="@+id/textPropertyTax"
+        android:layout_toRightOf="@+id/editPropertyTax"
+        android:layout_toEndOf="@+id/editPropertyTax" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="$ per year"
+        android:id="@+id/textPropertyInsuranceTailingMoneyPerYear"
+        android:layout_alignTop="@+id/textPropertyInsurance"
+        android:layout_toRightOf="@+id/editPropertyInsurance"
+        android:layout_toEndOf="@+id/editPropertyInsurance" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textPMITailingPercent"
+        android:layout_alignTop="@+id/textPMI"
+        android:layout_toRightOf="@+id/editPMI"
+        android:layout_toEndOf="@+id/editPMI" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerMon"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/textFirstPaymentDate"
+        android:layout_alignLeft="@+id/buttonCalculate"
+        android:layout_alignStart="@+id/buttonCalculate"
+        android:layout_alignRight="@+id/buttonCalculate"
+        android:layout_alignEnd="@+id/buttonCalculate"
+        android:entries="@array/monthsArr"
+    />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerYear"
+        android:layout_alignTop="@+id/spinnerMon"
+        android:spinnerMode="dropdown"
+        android:layout_toRightOf="@+id/spinnerMon"
+        android:layout_alignRight="@+id/editMonthlyPayment"
+        android:layout_alignEnd="@+id/editMonthlyPayment"
+        android:entries="@array/yearsArr"
+        />
+
+</RelativeLayout>
